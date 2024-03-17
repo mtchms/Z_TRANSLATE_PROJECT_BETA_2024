@@ -129,7 +129,7 @@ def main():
                     user_tr_counter_for_res = 0
                     print("Выберите режим:")
                     print(
-                        "1. Тест, вам будет предложено 10 вопросов, на которые вам престоит ответить и получить свой счёт решенных верно задач.")
+                        "1. Тест, вам будет предложено какое-то количество вопросов, на которые вам престоит ответить и получить свой счёт решенных верно задач.")
                     print("2. Бесконечный режим, в нем вы сможете бесконечно решать задачи пока не ошибетесь, после чего получите свой счёт решенных верно задач.")
                     choice_1 = int(input("Выберите режим (1 или 2): "))
                     if choice_1 == 1:
@@ -152,13 +152,9 @@ def main():
                                 base = 8
                             elif user_input_custom_dif_2 == "16":
                                 base = 16
-                            elif user_input_custom_dif_2 == "random":
-                                base = random.choice([2, 8, 16])
-                            else:
-                                print(
-                                    "Введены неправильные данные, попробуйте еще раз.")
-                                break
                             for i in range(1, user_input_custom_dif_1 + 1):
+                                if user_input_custom_dif_2 == "random":
+                                    base = random.choice([2, 8, 16])
                                 number = random.randint(
                                     user_min_dig, user_max_dig)
                                 converted_number = convert_to_base(
