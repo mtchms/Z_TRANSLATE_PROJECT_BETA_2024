@@ -59,7 +59,7 @@ def check_number_in_base(number, base_from):
 def main():
     while True:
         print("ВАС ПРИВЕТСТВУЕТ ПРОГРАММА Z_TRANSLATE!!!")
-        print("* * * * *")
+        print()
         print("Введите слово 'меню' для выбора режима или 'стоп' для завершения: ")
         user_input = input().lower()
 
@@ -68,6 +68,7 @@ def main():
         elif user_input == "меню":
             while True:
                 print("Меню:")
+                print()
                 print("1. Режим перевода чисел между системами счисления")
                 print(
                     "В этом режиме вы можете ввести своё число, систему этого числа, потом ту систему,")
@@ -86,6 +87,7 @@ def main():
                     while True:
                         number = input(
                             "Введите число (для выхода в главное меню напишите 'стоп'): ")
+                        print()
                         if number == 'стоп':
                             break
                         else:
@@ -109,6 +111,7 @@ def main():
                             elif check_number_in_base(number, base_from) == True:
                                 base_to = int(
                                     input("Введите конечную систему счисления: "))
+                                print()
                                 if base_to == 0:
                                     print(
                                         "Такой системы счисления не существует.")
@@ -128,10 +131,14 @@ def main():
                     user_tr_counter_1 = 0
                     user_tr_counter_for_res = 0
                     print("Выберите режим:")
+                    print()
                     print(
                         "1. Тест, вам будет предложено какое-то количество вопросов, на которые вам престоит ответить и получить свой счёт решенных верно задач.")
+                    print()
                     print("2. Бесконечный режим, в нем вы сможете бесконечно решать задачи пока не ошибетесь, после чего получите свой счёт решенных верно задач.")
+                    print()
                     choice_1 = int(input("Выберите режим (1 или 2): "))
+                    print()
                     if choice_1 == 1:
                         user_input_dif = input(
                             "Введите сложность, в которой желаете испытать себя (легко, средне, сложно, ваша собственная (Введите 'Z')):\n")
@@ -142,6 +149,7 @@ def main():
                                 "Количество вопросов. (Введите любое число от 1 до бесконечности): "))
                             user_input_custom_dif_2 = input(
                                 "Выберите ту систему счисления, в которой хотели бы потренироваться (2, 8, 16) (для рандомного выбора введите 'random'): ")
+                            print()
                             user_min_dig = (
                                 int("1" + "0" * (user_input_custom_dif_0 - 1)))
                             user_max_dig = (
@@ -163,6 +171,7 @@ def main():
                                     f"{i}.Число {number} в систему счисления {base}:")
                                 user_answer = input(
                                     "Введите перевод в другую систему счисления (если в вашем ответе есть буква, то она должна быть в нижнем регистре), либо 'стоп' для выхода в меню: ")
+                                print()
                                 if user_answer.lower() == "стоп":
                                     break
                                 if check_answer(number, user_answer, base):
@@ -192,6 +201,7 @@ def main():
                                     f"{i}.Число {number} в систему счисления {base}:")
                                 user_answer = input(
                                     "Введите перевод в другую систему счисления (если в вашем ответе есть буква, то она должна быть в нижнем регистре), либо 'стоп' для выхода в меню: ")
+                                print()
                                 if user_answer.lower() == "стоп":
                                     break
                                 if check_answer(number, user_answer, base):
@@ -218,6 +228,7 @@ def main():
                                     f"{i}.Число {number} в систему счисления {base}:")
                                 user_answer = input(
                                     "Введите перевод в другую систему счисления (если в вашем ответе есть буква, то она должна быть в нижнем регистре), либо 'стоп' для выхода в меню: ")
+                                print()
                                 if user_answer.lower() == "стоп":
                                     break
                                 if check_answer(number, user_answer, base):
@@ -244,6 +255,7 @@ def main():
                                     f"{i}.Число {number} в систему счисления {base}:")
                                 user_answer = input(
                                     "Введите перевод в другую систему счисления (если в вашем ответе есть буква, то она должна быть в нижнем регистре), либо 'стоп' для выхода в меню: ")
+                                print()
                                 if user_answer.lower() == "стоп":
                                     break
                                 if check_answer(number, user_answer, base):
@@ -267,8 +279,10 @@ def main():
                             converted_number = convert_to_base(number, base)
                             print(
                                 f"Число {number} в систему счисления {base}:")
+                            print()
                             user_answer = input(
                                 "Введите перевод в другую систему счисления (если в вашем ответе есть буква, то она должна быть в нижнем регистре), либо 'стоп' для выхода в меню: ")
+                            print()
                             if user_answer.lower() == "стоп":
                                 break
                             if check_answer(number, user_answer, base):
@@ -277,8 +291,10 @@ def main():
                             else:
                                 print(
                                     f"Неправильно. Правильный ответ: {converted_number}\n")
+                                print()
                                 print(
                                     f"Вы допустили ошибку, ваш счетчик правильно решенных подряд примеров: {user_tr_counter_1}\n")
+                                print()
                                 print("Вы возвращены в главное меню")
                                 break
                 else:
