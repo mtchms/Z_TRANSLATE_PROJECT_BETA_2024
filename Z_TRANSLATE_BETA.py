@@ -58,6 +58,8 @@ def check_number_in_base(number, base_from):
 
 def main():
     while True:
+        print("ВАС ПРИВЕТСТВУЕТ ПРОГРАММА Z_TRANSLATE!!!")
+        print("* * * * *")
         print("Введите слово 'меню' для выбора режима или 'стоп' для завершения: ")
         user_input = input().lower()
 
@@ -138,14 +140,27 @@ def main():
                                 "Количество цифр в числе. (Введите любое число от 1 до бесконечности): "))
                             user_input_custom_dif_1 = int(input(
                                 "Количество вопросов. (Введите любое число от 1 до бесконечности): "))
+                            user_input_custom_dif_2 = input(
+                                "Выберите ту систему счисления, в которой хотели бы потренироваться (2, 8, 16) (для рандомного выбора введите 'random'): ")
                             user_min_dig = (
                                 int("1" + "0" * (user_input_custom_dif_0 - 1)))
                             user_max_dig = (
                                 int("1" + "0" * (user_input_custom_dif_0)) - 1)
+                            if user_input_custom_dif_2 == "2":
+                                base = 2
+                            elif user_input_custom_dif_2 == "8":
+                                base = 8
+                            elif user_input_custom_dif_2 == "16":
+                                base = 16
+                            elif user_input_custom_dif_2 == "random":
+                                base = random.choice([2, 8, 16])
+                            else:
+                                print(
+                                    "Введены неправильные данные, попробуйте еще раз.")
+                                break
                             for i in range(1, user_input_custom_dif_1 + 1):
                                 number = random.randint(
                                     user_min_dig, user_max_dig)
-                                base = random.choice([2, 8, 16])
                                 converted_number = convert_to_base(
                                     number, base)
                                 print(
